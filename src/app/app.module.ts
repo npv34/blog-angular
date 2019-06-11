@@ -6,6 +6,7 @@ import {AppComponent} from './app.component';
 import {TaskService} from './task/task.service';
 import {HttpClientModule} from '@angular/common/http';
 import {TaskComponent} from './task/task.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {TaskComponent} from './task/task.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [TaskService],
   bootstrap: [AppComponent]
