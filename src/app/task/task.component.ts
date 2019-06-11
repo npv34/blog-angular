@@ -9,6 +9,8 @@ import {Task} from './task';
 })
 export class TaskComponent implements OnInit {
   tasks: Task[] = [];
+  task: Task;
+
   constructor(public taskService: TaskService) {
   }
 
@@ -19,5 +21,15 @@ export class TaskComponent implements OnInit {
   getAll() {
     this.taskService.getTasks().subscribe(data => this.tasks = data, error => (this.tasks = []));
   }
+
+  getTask(id: number) {
+    this.taskService.getTaskById(id).subscribe(data => this.task = data);
+  }
+
+  delete(id: number) {
+   this.taskService.delete(id).subscribe();
+   this.getAll();
+  }
+
 
 }
