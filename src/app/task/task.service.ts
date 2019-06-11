@@ -31,4 +31,8 @@ export class TaskService {
   delete(id: number): Observable<Task> {
     return this.http.delete<Task>(`${this.API_URL}/${id}`);
   }
+
+  create(task: Partial<Task>): Observable<Task> {
+    return  this.http.post<Task>(this.API_URL + '/create', task);
+  }
 }
