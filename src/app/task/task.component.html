@@ -9,7 +9,7 @@
     <tr *ngFor="let task of tasks; index as i">
       <td>{{ i + 1}}</td>
       <td>{{ task.title}}</td>
-      <td><a href="" class="btn btn-danger">Delete</a></td>
+      <td><button (click)="delete(task.id)" class="btn btn-danger">Delete</button></td>
     </tr>
   </table>
 </div>
